@@ -20,7 +20,6 @@ function shuffleArray(array) {
         array[i] = array[j];
         array[j] = temp;
     }
-
     array.push(array[0]);
     array.push(array[1]);
     array.push(array[2]);
@@ -50,9 +49,22 @@ document.getElementById('refresh').addEventListener('click', function () {
     initReels(reel);
 });
 
+
+var r1 = document.getElementById('reel1');
+var r2 = document.getElementById('reel2');
+var r3 = document.getElementById('reel3');
+
 document.getElementById('spin').addEventListener('click', function () {
+    r1.className += " reel1-spin";
+    r2.className += " reel2-spin";
+    r3.className += " reel3-spin";
+
 });
 
 document.getElementById('stop').addEventListener('click', function () {
+
+    r1.className = "reel";
+    r2.className = "reel";
+    r3.className = "reel";
 
 });
