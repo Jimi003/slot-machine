@@ -48,15 +48,15 @@ button {
        }
   }
   
-  #reel1{
+  .reel1-spin{
       animation: spin 0.6s infinite linear;
   }
-  #reel2{
+  .reel2-spin{
       animation: spin 0.55s infinite linear;
 
   }
   
-  #reel3{
+  .reel3-spin{
     animation: spin 0.5s infinite linear;
 
 }
