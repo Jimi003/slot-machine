@@ -8,6 +8,7 @@ var reel = [
     "icons/Royal_A.png",
     "icons/Scatter.png"
 ];
+var reelNew;
 
 /**
  * Randomize array element order in-place.
@@ -20,19 +21,25 @@ function shuffleArray(array) {
         array[i] = array[j];
         array[j] = temp;
     }
-    array.push(array[0]);
-    array.push(array[1]);
-    array.push(array[2]);
 }
 
 function initReels(reel) {
-    console.log(reel)
     for (j = 1; j < 4; j++) {
         shuffleArray(reel)
+        reelNew = reel;
+        reelNew.push(reelNew[0]);
+        reelNew.push(reelNew[1]);
+        reelNew.push(reelNew[2]);
+        console.log(reelNew)
         for (i = 0; i < 11; i++) {
-            document.getElementById("reel" + j).insertAdjacentHTML("beforeend", "<img src='" + reel[i] + "' />")
+            document.getElementById("reel" + j).insertAdjacentHTML("beforeend", "<img src='" + reelNew[i] + "' />")
         }
+        reelNew.pop()
+        reelNew.pop()
+        reelNew.pop()
+        reelNew = reel;
     }
+    console.log(reel)
 }
 
 // Initialize on page load.
